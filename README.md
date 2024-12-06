@@ -1,5 +1,5 @@
 # Sway
 
 ```
-mkdir -p ~./config/sway
+mkdir -p ~/.config/sway
 ```
