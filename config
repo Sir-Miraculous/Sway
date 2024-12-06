@@ -1,0 +1,129 @@
+# ==============================================
+#               SWAY CONFIGURATION
+# ==============================================
+
+## General Options
+## ===============
+set $term alacritty         # Default terminal emulator
+exec swaybg -i ~/Pictures/wallpaper.jpg -m fill   # Set wallpaper
+exec_always --no-startup-id waybar                # Launch Waybar on startup
+exec_always --no-startup-id wofi --show run       # Application launcher
+
+## Output
+## ======
+# Configure monitors
+output eDP-1 resolution 1920x1080 position 0,0 scale 1
+#output HDMI-A-1 resolution 1920x1080 position 1920,0 scale 1
+
+## Input
+## =====
+
+    # Keyboard
+    # --------
+    input type:keyboard {
+        xkb_layout us                # Set keyboard layout
+        xkb_options numpad:microsoft # Enable Num Lock by default
+        repeat_rate 25               # Key repeat rate
+        repeat_delay 300             # Key repeat delay
+    }
+
+    # Mouse
+    # -----
+    input type:pointer {
+        accel_profile flat           # Flat acceleration profile
+        pointer_accel 0.5            # Pointer acceleration
+        natural_scroll enabled       # Enable natural scrolling
+    }
+
+    # Touchpad
+    # --------
+    input type:touchpad {
+        tap enabled                  # Enable tap-to-click
+        drag enabled                 # Enable drag gestures
+        scroll_factor 1.2            # Adjust scrolling speed
+    }
+
+## Window Management
+## =================
+workspace_layout tabbed            # Use tabbed layout by default for workspaces
+focus_follows_mouse yes            # Automatically focus windows under the mouse
+
+# Workspaces
+## ==========
+
+    # Toggle Workspaces
+    bindsym $mod+1 workspace 1      # Switch to workspace 1
+    bindsym $mod+2 workspace 2      # Switch to workspace 2
+    bindsym $mod+3 workspace 3      # Switch to workspace 3
+    bindsym $mod+4 workspace 4      # Switch to workspace 4
+    bindsym $mod+5 workspace 5      # Switch to workspace 5
+
+    # Move Focused Window To Workspace
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace 2
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
+
+## Keybindings
+## ===========
+
+    # Set Mod Key
+    set $mod Mod4                   # Use Super (Windows) key as the mod key
+
+    # Change Audio
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+    # Change Brightness
+    bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+    bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+    # Toggle Fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle Floating
+    bindsym $mod+Shift+space floating toggle
+
+    # Launch Applications
+    bindsym $mod+Return exec $term               # Launch terminal
+    bindsym $mod+d exec wofi --show drun         # Launch application menu
+    bindsym $mod+e exec thunar                   # Launch file manager
+    bindsym $mod+w exec firefox                  # Launch web browser
+
+    # Reload Config
+    bindsym $mod+Shift+c reload
+
+    # Move Focused Window
+    bindsym $mod+h move left
+    bindsym $mod+j move down
+    bindsym $mod+k move up
+    bindsym $mod+l move right
+
+    # Change Focused
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+## Floating Windows
+## ================
+floating_minimum_size 100x100
+floating_maximum_size 800x800
+for_window [app_id="*"] floating enable
+for_window [class="thunar"] floating enable      # Example: Always float Thunar
+for_window [title="Calculator"] floating enable  # Example: Float Calculator
+
+## Graphics
+## ========
+output * {
+    adaptive_sync off                # Enable adaptive sync globally
+}
+
+
+# ==============================================
+#        Apps To Be Used With This Config
+#  waybar swaybg alacritty thunar firefox wofi
+#  brightnessctl
+# ==============================================
