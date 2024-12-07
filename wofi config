@@ -1,30 +1,51 @@
-# -----------------------------------------
-# Wofi Configuration
-# -----------------------------------------
+window {
+margin: 0px;
+border: 1px solid #bd93f9;
+background-color: #282a36;
+}
 
-# Appearance
-[appearance]
-background = #22084E          # Background color
-foreground = #ffffff          # Text color
-border_color = #5CE6FA        # Border color
-padding = 15                  # Padding around elements
-font = Iosevka-12             # Font and size
+#input {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: #44475a;
+}
 
-# Launcher
-[launcher]
-command = drun                # Launch command for apps
-lines = 10                     # Number of items in dropdown list
-columns = 5                    # Number of columns for the grid layout
-highlight_background = #005577  # Highlight selected item background
-highlight_foreground = #ffffff  # Highlight selected item foreground
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #282a36;
+}
 
-# Colors for different states
-[colors]
-normal = #1e1e2e
-selected = #005577
-urgent = #ff5555
+#outer-box {
+margin: 5px;
+border: none;
+background-color: #282a36;
+}
 
-# Miscellaneous
-[general]
-show_hidden = true             # Include hidden apps
-enable_history = true          # Enable search history
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable #text {
+color: #282a36;
+}
+
+#entry > * {
+color: #f8f8f2;
+}
+
+#entry:selected {
+background-color: #44475a;
+}
+
+#entry:selected #text {
+font-weight: bold;
+}
