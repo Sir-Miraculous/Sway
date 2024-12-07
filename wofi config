@@ -1,0 +1,30 @@
+# -----------------------------------------
+# Wofi Configuration
+# -----------------------------------------
+
+# Appearance
+[appearance]
+background = #22084E          # Background color
+foreground = #ffffff          # Text color
+border_color = #5CE6FA        # Border color
+padding = 15                  # Padding around elements
+font = Iosevka-12             # Font and size
+
+# Launcher
+[launcher]
+command = drun                # Launch command for apps
+lines = 10                     # Number of items in dropdown list
+columns = 5                    # Number of columns for the grid layout
+highlight_background = #005577  # Highlight selected item background
+highlight_foreground = #ffffff  # Highlight selected item foreground
+
+# Colors for different states
+[colors]
+normal = #1e1e2e
+selected = #005577
+urgent = #ff5555
+
+# Miscellaneous
+[general]
+show_hidden = true             # Include hidden apps
+enable_history = true          # Enable search history
