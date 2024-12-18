@@ -1,0 +1,31 @@
+/* Swaynag Notification Styles */
+.swaynag {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    background: rgba(23, 23, 23, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Hover Effect */
+.swaynag:hover {
+    background: rgba(50, 50, 60, 0.9);
+    transition: background 0.3s ease;
+}
+
+/* Notifications for Brightness & Volume */
+.swaynag-brightness {
+    color: #FFC107;
+}
+
+.swaynag-volume {
+    color: #03A9F4;
+}
+
+/* Subtle Shadow Effect */
+.swaynag-shadow {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,114 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "width": 1920,
+    "spacing": 4,
+    "reload_style_on_change": true,
+
+    "modules-left": [],
+
+    "modules-center": [
+        "custom/ulauncher",
+        "clock"
+    ],
+
+    "modules-right": [
+        "brightness",
+        "wireplumber",
+        "bluetooth",
+        "custom/clipman",
+        "networkmanager",
+        "power-profiles-daemon",
+        "battery",
+        "tray",
+        "swaync",
+        "custom/power"
+    ],
+
+    "custom/ulauncher": {
+        "format": "󰍉",
+        "tooltip": "Launch Applications",
+        "on-click": "ulauncher-toggle",
+        "icon-size": 24
+    },
+
+    "clock": {
+        "locale": "en_ZA.UTF-8",
+        "format": "{:%l:%M %p}",
+        "click-left": "gtk-launch gnome-calendar",
+        "icon-size": 24
+    },
+
+    "brightness": {
+        "format": "\u1F506 {value}%",
+        "tooltip": "Brightness: {value}%",
+        "scroll-up": "luminance up",
+        "scroll-down": "luminance down",
+        "click-left": "gtk-launch luminance",
+        "icon-size": 24
+    },
+
+    "wireplumber": {
+        "format": "{volume}%",
+        "format-muted": "{volume}%",
+        "scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ +2%",
+        "scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ -2%",
+        "click-middle": "wpctl toggle-mute @DEFAULT_AUDIO_SINK@",
+        "click-left": "gtk-launch pwavucontrol",
+        "icon-size": 24
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "click-left": "gtk-launch blueman-manager",
+        "tooltip": "Open Blueman Bluetooth Manager",
+        "icon-size": 24
+    },
+
+    "custom/clipman": {
+        "format": "󰎄",
+        "tooltip": "Clipboard History",
+        "on-click": "clipman pick",
+        "icon-size": 24
+    },
+
+    "networkmanager": {
+        "format": "\u1F50C",
+        "click-left": "nm-applet",
+        "tooltip": true,
+        "icon-size": 24
+    },
+
+    "power-profiles-daemon": {
+        "format": "\u26A1",
+        "click-left": "powerprofilesctl cycle",
+        "tooltip": "Current Profile: $(powerprofilesctl status | grep 'Profile' | awk '{print $2}')",
+        "icon-size": 24
+    },
+
+    "battery": {
+        "format": "\u1F50B {percentage}%",
+        "format-charging": "\u1F50C {percentage}%",
+        "click-left": "xfce4-power-manager",
+        "tooltip": "Battery: {percentage}%",
+        "icon-size": 24
+    },
+
+    "tray": {
+        "icon-size": 24
+    },
+
+    "swaync": {
+        "format": "󰂚",
+        "on-click": "swaync-client -t",
+        "tooltip": "Open Notification Center",
+        "icon-size": 24
+    },
+
+    "custom/power": {
+        "format": "\u23FB",
+        "on-click": "nwg-bar -c ~/.config/nwg-bar/power-menu.conf",
+        "icon-size": 24
+    }
+}

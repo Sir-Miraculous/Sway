@@ -1,0 +1,18 @@
+path - /etc/sddm.conf
+     - /etc/sddm.conf.d/default.conf
+
+    [InputDevice]
+InputClass=numpad
+XkbOptions=numpad:inl
+
+sudo systemctl restart sddm
+
+To change the theme -
+/usr/share/sddm/themes/
+
+[Theme]
+# Path to your desired SDDM theme
+CurrentTheme=/usr/share/sddm/themes/your-theme-name
+CursorTheme=breeze
+
+sudo systemctl restart sddm
