@@ -5,7 +5,7 @@
 ## General Options
 ## ===============
 set $term alacritty         # Default terminal emulator
-exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
+exec swaybg -i ~/Pictures/Wallpapers/wallpaper.jpg -m fill
 exec_always --no-startup-id waybar
 exec_always --no-startup-id swaync
 exec_always --no-startup-id clipman store
