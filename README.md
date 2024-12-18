@@ -7,4 +7,4 @@ Install the following packages for everything to work
 paru -S swaync sddm flameshot swaybg waybar gnome-calendar pwvucontrol networkmanager xfce4-power-manager nwg-bar luminance blueman ttf-jetbrains-mono-nerd ulauncher clipman swaynag wireplumber pipewire alacritty
 ```
 
-The copy all the files to the .config file in your Home directory
+Then copy all the files to the .config file in your Home directory
