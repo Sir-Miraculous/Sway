@@ -1,0 +1,119 @@
+# ==============================================
+#               SWAY CONFIGURATION
+# ==============================================
+
+## General Options
+## ===============
+set $term alacritty         # Default terminal emulator
+exec swaybg -i ~/Pictures/wallpaper.jpg -m fill
+exec_always --no-startup-id waybar
+exec_always --no-startup-id swaync
+exec_always --no-startup-id clipman store
+
+## Output
+## ======
+# Configure monitors to auto-select the highest resolution
+output eDP-1 resolution auto position 0,0 scale 1
+# If you have external monitors, they will automatically detect their highest resolution
+# Uncomment if you have HDMI or other connections
+# output HDMI-A-1 resolution auto position 1920,0 scale 1
+
+## Input
+## =====
+
+# Keyboard
+input type:keyboard {
+    xkb_layout us
+    xkb_options numpad:microsoft
+    repeat_rate 25
+    repeat_delay 300
+}
+
+# Mouse
+input type:pointer {
+    accel_profile flat
+    pointer_accel 0.5
+    natural_scroll enabled
+}
+
+# Touchpad
+input type:touchpad {
+    tap enabled
+    drag enabled
+    scroll_factor 1.2
+}
+
+## Window Management
+workspace_layout tabbed
+focus_follows_mouse yes
+
+# Workspaces
+bindcode $mod+1 workspace number 1
+bindcode $mod+2 workspace number 2
+bindcode $mod+3 workspace number 3
+bindcode $mod+4 workspace number 4
+bindcode $mod+5 workspace number 5
+
+bindcode $mod+Shift+1 move container to workspace number 1
+bindcode $mod+Shift+2 move container to workspace number 2
+bindcode $mod+Shift+3 move container to workspace number 3
+bindcode $mod+Shift+4 move container to workspace number 4
+bindcode $mod+Shift+5 move container to workspace number 5
+
+## Keybindings
+set $mod Mod4
+
+# Change Audio Volume with WirePlumber
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5% && swaynag -m 'Volume Increased!' -c ~/.config/swaynag/swaynag_theme.css"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -5% && swaynag -m 'Volume Decreased!' -c ~/.config/swaynag/swaynag_theme.css"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle && swaynag -m 'Audio Muted/Unmuted!' -c ~/.config/swaynag/swaynag_theme.css"
+
+# Change Brightness using Luminance
+bindsym XF86MonBrightnessUp exec "luminance +10 && swaynag -m 'Brightness Increased!' -c ~/.config/swaynag/swaynag_theme.css"
+bindsym XF86MonBrightnessDown exec "luminance -10 && swaynag -m 'Brightness Decreased!' -c ~/.config/swaynag/swaynag_theme.css"
+
+# Take Screenshots with Flameshot
+bindsym Print exec flameshot gui
+
+# Toggle Fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle Floating
+bindsym $mod+Shift+space floating toggle
+
+# Launch Applications
+bindsym $mod+Return exec $term
+bindsym $mod+d exec ulauncher
+bindsym $mod+e exec nautilus
+bindsym $mod+w exec firefox
+bindsym $mod+c kill
+
+# Reload Config
+bindsym $mod+Shift+c reload
+
+# Move Focused Window
+bindsym $mod+h move left
+bindsym $mod+j move down
+bindsym $mod+k move up
+bindsym $mod+l move right
+
+# Change Focused
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+## Floating Windows
+## ================
+
+## Graphics
+output * {
+    adaptive_sync off
+}
+
+# ==============================================
+#        Apps To Be Used With This Config
+#  waybar swaybg alacritty nautilus firefox
+#  swaync pipewire wireplumber luminance
+#  ulauncher flameshot swaynag clipman
+# ==============================================
